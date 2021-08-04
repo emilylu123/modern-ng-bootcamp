@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   // title = 'password';
-  length = 0;
+  length = 10;
   ifLetter: boolean = false;
   ifNumber: boolean = false;
   ifSymbol: boolean = false;
@@ -69,7 +69,7 @@ export class AppComponent {
     this.password = randomPassword;
     this.message = '';
     this.printCondition();
-
+    console.log("Random Password: ",this.password)
     // return this.password;
   };
 

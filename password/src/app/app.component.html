@@ -1,7 +1,7 @@
 <h1>Password Generator</h1>
 <div>
   <label for="length">Enter Length</label>
-  <input (input)="onChangeLength($any($event.target).value)" />
+  <input (input)="onChangeLength($any($event.target).value)" [value]='length' />
 </div>
 <div>
   <input type="checkbox" name="letter" id="letter" (change)="useLetter()">
@@ -16,10 +16,10 @@
   <label for="symbol">Use Symbols</label>
 </div>
 
-<button (click)="generatePassword()">Generate</button>
+<button (click)="generatePassword()">Generate New Password</button>
 
 <div>
-  <label for=" password">Your Password</label>
+  <label for="password">Your Password</label>
   <input type="text" name="password" id="password" [value]="password">
 </div>
 <h1>{{message}}</h1>
