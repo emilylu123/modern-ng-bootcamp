@@ -1,14 +1,14 @@
-<h1>Password Generator</h1>
+<h1>{{title}}</h1>
 <div>
   <label for="length">Enter Length</label>
-  <input (input)="onChangeLength($any($event.target).value)" [value]='length' />
+  <input (input)="onChangeLength($event.target!)" [value]='length' />
 </div>
 <div>
-  <input type="checkbox" name="letter" id="letter" (change)="useLetter()">
+  <input type="checkbox" name="letter" id="letter" checked (change)="useLetter()">
   <label for="letter">Use Letters</label>
 </div>
 <div>
-  <input type="checkbox" name="number" id="number" (change)="useNumber()">
+  <input type="checkbox" name="number" id="number" checked (change)="useNumber()">
   <label for="number">Use Numbers</label>
 </div>
 <div>
