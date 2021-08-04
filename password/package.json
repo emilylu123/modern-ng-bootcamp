@@ -24,6 +24,7 @@
     "now": "^21.0.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
+    "vercel": "^23.0.1",
     "zone.js": "~0.11.3"
   },
   "devDependencies": {
