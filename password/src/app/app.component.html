@@ -18,12 +18,15 @@
 
 <button (click)="generatePassword()">Generate New Password</button>
 
-<div>
+<div *ngIf="password">
   <label for="password">Your Password</label>
   <input type="text" name="password" id="password" [value]="password">
 </div>
-<h1>{{message}}</h1>
+<div *ngIf="message">
+  <h1>{{message}}</h1>
+</div>
 
 <!-- my avatar -->
+<br />
 <img
   src='https://avataaars.io/?avatarStyle=Circle&topType=LongHairBob&accessoriesType=Blank&hairColor=BrownDark&facialHairType=Blank&clotheType=Hoodie&clotheColor=Blue02&eyeType=Wink&eyebrowType=RaisedExcited&mouthType=Smile&skinColor=Light' />
