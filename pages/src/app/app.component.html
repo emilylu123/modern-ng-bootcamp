@@ -1,13 +1,13 @@
 <nav>
   <ul class="pagination">
-    <li class="page-item" [ngClass]="{disabled: currentPage===0}"><a class="page-link"
+    <li class="page-item" [appClass]="{disabled: currentPage===0}"><a class="page-link"
         (click)="currentPage=currentPage-1">Prev</a></li>
     <ng-container *ngFor="let image of images; let i = index">
-      <li class="page-item" [ngClass]="{ active: i === currentPage }" *ngIf="checkIndex(i)">
+      <li class="page-item" [appClass]="{ active: i === currentPage }" *ngIf="checkIndex(i)">
         <a (click)="currentPage=i" class="page-link">{{ i + 1 }}</a>
       </li>
     </ng-container>
-    <li class="page-item" [ngClass]="{disabled: currentPage===images.length-1}"><a class="page-link"
+    <li class="page-item" [appClass]="{disabled: currentPage===images.length-1}"><a class="page-link"
         (click)="currentPage=currentPage+1">Next</a></li>
   </ul>
 </nav>
@@ -19,7 +19,7 @@
 
 <div [ngSwitch]='currentPage'>
   <div *ngSwitchCase='currentPage'>
-    <h4 [appClass]="'red'">{{images[currentPage].title}}</h4>
+    <h4>{{images[currentPage].title}}</h4>
     <img [src]='images[currentPage].url' />
   </div>
   <div *ngSwitchDefault>Default</div>
