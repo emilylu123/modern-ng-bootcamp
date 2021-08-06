@@ -7,9 +7,4 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent {
   title = 'To Do List';
-  todoList: string[] = ['Study', 'Eat', 'Sleep'];
-
-  addNewTodoItem(item: any) {
-    this.todoList.push(item);
-  }
 }

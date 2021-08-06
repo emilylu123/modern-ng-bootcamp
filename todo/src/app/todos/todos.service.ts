@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TodosService {
+  todoList: string[] = ['Study', 'Eat', 'Sleep'];
 
-  constructor() { }
+  addNewTodoItem(item: any) {
+    this.todoList.push(item);
+  }
 }
