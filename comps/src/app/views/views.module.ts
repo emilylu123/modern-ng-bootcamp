@@ -7,5 +7,6 @@ import { ViewsHomeComponent } from './views-home/views-home.component';
 @NgModule({
   declarations: [ViewsHomeComponent],
   imports: [CommonModule, ViewsRoutingModule],
+  exports: [ViewsHomeComponent],
 })
 export class ViewsModule {}

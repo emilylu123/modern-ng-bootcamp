@@ -20,9 +20,11 @@
     "@angular/platform-browser-dynamic": "~11.2.8",
     "@angular/router": "~11.2.8",
     "avataaars": "^1.2.2",
+    "bulma": "^0.9.3",
     "now": "^21.0.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
+    "vercel": "^23.0.1",
     "zone.js": "~0.11.3"
   },
   "devDependencies": {
