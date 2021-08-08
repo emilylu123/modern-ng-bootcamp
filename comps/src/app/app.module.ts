@@ -2,6 +2,7 @@ import { ModsModule } from './mods/mods.module';
 import { ViewsModule } from './views/views.module';
 import { CollectionsModule } from './collections/collections.module';
 import { ElementsModule } from './elements/elements.module';
+import { ProjectsModule } from './projects/projects.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -18,6 +19,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     CollectionsModule,
     ViewsModule,
     ModsModule,
+    ProjectsModule,
     AppRoutingModule, // AppRouting is always at the end to avoid **
   ],
   providers: [],
