@@ -6,22 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'Password Generator';
-  length = 10;
-  ifLetter: boolean = true;
-  ifNumber: boolean = true;
+  // title = 'password';
+  length = 0;
+  ifLetter: boolean = false;
+  ifNumber: boolean = false;
   ifSymbol: boolean = false;
   password: string = '';
   message: string = '';
 
-  onChangeLength(target: EventTarget): void {
-    const value  = (<HTMLInputElement>target).value;
-    const parsedValue = parseInt(value);
-
+  onChangeLength(value: string) {
     if (value == null) return;
-
-    if (!isNaN(parsedValue)) {
-      this.length = parsedValue;
+    const parseValue = parseInt(value);
+    if (!isNaN(parseValue)) {
+      this.length = parseValue;
+    } else {
+      this.length = 0;
     }
     this.generatePassword();
     console.log('Input Value:', value);
@@ -70,7 +69,7 @@ export class AppComponent {
     this.password = randomPassword;
     this.message = '';
     this.printCondition();
-    console.log("Random Password: ",this.password)
+
     // return this.password;
   };
 

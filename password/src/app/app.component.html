@@ -1,60 +1,29 @@
-<div class="container">
-  <div class="columns is-centered">
-    <div class="box column is-one-third">
-      <h1 class="title has-text-centered">{{title}}</h1>
-
-      <div class="field">
-        <label>Length</label>
-        <input (input)="onChangeLength($event.target!)" [value]='length' />
-      </div>
-
-      <div class="field">
-        <div class="control">
-          <label class="checkbox">
-            <input (change)="useLetter()" type="checkbox" checked />
-            Use Letters
-          </label>
-        </div>
-      </div>
-
-      <div class="field">
-        <div class="control">
-          <label class="checkbox">
-            <input (change)="useNumber()" type="checkbox" checked />
-            Use Numbers
-          </label>
-        </div>
-      </div>
-
-      <div class="field">
-        <div class="control">
-          <label class="checkbox">
-            <input (change)="useSymbol()" type="checkbox" />
-            Use Symbols
-          </label>
-        </div>
-      </div>
-
-      <button [disabled]="
-          !(length && (ifLetter || ifNumber || ifSymbol))
-        " (click)="generatePassword()" class="button is-link is-fullwidth">
-        Generate New Password
-      </button>
-
-      <div class="box" *ngIf="password">
-        <label>Your Password</label>
-        <input class="input" [value]="password" />
-      </div>
-      <div *ngIf="message">
-        <h1>{{message}}</h1>
-      </div>
-    </div>
-  </div>
-  <!-- my avatar -->
-  <div class="columns is-centered">
-    <figure class="image is-128x128">
-      <img
-        src='https://avataaars.io/?avatarStyle=Circle&topType=LongHairBob&accessoriesType=Blank&hairColor=BrownDark&facialHairType=Blank&clotheType=Hoodie&clotheColor=Blue02&eyeType=Wink&eyebrowType=RaisedExcited&mouthType=Smile&skinColor=Light' />
-    </figure>
-  </div>
+<h1>Password Generator</h1>
+<div>
+  <label for="length">Enter Length</label>
+  <input (input)="onChangeLength($any($event.target).value)" />
 </div>
+<div>
+  <input type="checkbox" name="letter" id="letter" (change)="useLetter()">
+  <label for="letter">Use Letters</label>
+</div>
+<div>
+  <input type="checkbox" name="number" id="number" (change)="useNumber()">
+  <label for="number">Use Numbers</label>
+</div>
+<div>
+  <input type="checkbox" name="symbol" id="symbol" (change)="useSymbol()">
+  <label for="symbol">Use Symbols</label>
+</div>
+
+<button (click)="generatePassword()">Generate</button>
+
+<div>
+  <label for=" password">Your Password</label>
+  <input type="text" name="password" id="password" [value]="password">
+</div>
+<h1>{{message}}</h1>
+
+<!-- my avatar -->
+<img
+  src='https://avataaars.io/?avatarStyle=Circle&topType=LongHairBob&accessoriesType=Blank&hairColor=BrownDark&facialHairType=Blank&clotheType=Hoodie&clotheColor=Blue02&eyeType=Wink&eyebrowType=RaisedExcited&mouthType=Smile&skinColor=Light' />
